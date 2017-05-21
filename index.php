@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Home | Find A Job EASY</title>
+  <title>Home | jobMailing</title>
   <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <link rel="icon" type="favicon/png" href="./img/jobMailing.png">
 </head>
 <body>
 
@@ -15,7 +16,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="./index.php">Find A Job EASY</a>
+      <a class="navbar-brand" href="./index.php">jobMailing</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -32,6 +33,12 @@
   </div>
 </nav>
 
+
+<div class="jumbotron" style="padding-left: 20px;padding-right:20px;padding-top:250px">
+  <h1>jobMailing</h1>
+  <p>This is a simple web interface, to allow us to send multiple applicaiton mails in a click with differents settings to each enterprise.</p>
+  <p><a class="btn btn-primary btn-lg">Join us now</a></p>
+</div>
 
 </body>
 </html>

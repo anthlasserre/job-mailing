@@ -1,8 +1,13 @@
+<?php
+include('./include/session.php');
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Documents | Find A Job EASY</title>
-  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <title>Documents | jobMailing</title>
+  <link rel="stylesheet" type="text/css" href="./bootstrap.css">
+  <link rel="icon" type="favicon/png" href="./img/jobMailing.png">
+  <link rel="stylesheet" href="./css/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -15,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="./index.php">Find A Job EASY</a>
+      <a class="navbar-brand" href="./index.php">jobMailing</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -24,25 +29,27 @@
         <li class="active"><a href="./documents.php">Documents <span class="sr-only">(current)</span></a></li>
         <li><a href="./actions.php">Actions</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <!-- <ul class="nav navbar-nav navbar-right">
         <li><a href="./contact.php">Contact</a></li>
-
+      </ul> -->
+      <ul class="nav navbar-nav navbar-right">
+      <li>
+      <p class="connect" style="color:white;margin-top:8px;margin-bottom:-5px;"><?php
+      include('./include/userConnect.php');
+      if ($_SESSION['login_user'] != "www-data") {
+        echo 'Yo ' . $_SESSION['login_user'] . ' !' .'  <i class="fa fa-user-circle-o"></i>'  . '<br>';
+        ?><p class="connect"><a href="./include/logout.php">Se déconnecter</a></p>
+      <?php }
+      else {
+        ?><p class="connect" style="margin-top:25px;margin-bottom:-25px"><a href="./login.php">Se connecter</a></p><?php
+      }
+      ?>
+    </p>
+      </li>
       </ul>
     </div>
   </div>
-  </nav>
-  <p class="connect"><?php
-  include('./include/userConnect.php');
-  if ($_SESSION['login_user'] == "root") {
-    echo 'Bonjour ' . $_SESSION['login_user'] . '  <i class="fa fa-user-circle-o"></i>'  . '<br>';
-    ?><p class="connect"><a href="./include/logout.php">Se déconnecter</a></p>
-  <?php }
-  else {
-    ?><p class="connect"><a href="./include/login.php">Se connecter</a></p><?php
-  }
-  ?>
-
-
+</nav>
 
   <!-- CONTENU -->
 
@@ -52,7 +59,6 @@
   <div class="panel-body">
 
   </div>
-  <p style="margin-left:20px">Download</p>
   <form name="upload" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data"  style="margin-left:20px">
      <!-- On limite le fichier à 100Ko -->
      <input type="hidden" name="MAX_FILE_SIZE" value="100000">
@@ -87,19 +93,18 @@
 
 
   <!-- MOTIVATION LETTER -->
-<div class="panel panel-default" style="position:absolute;width:48%;right:10px">
-  <div class="panel-heading">Motivation Letter</div>
+<div class="panel panel-default" style="position:absolute;width:48%;right:20px">
+  <div class="panel-heading">Cover Letter</div>
   <div class="panel-body">
 
   </div>
-  <p style="margin-left:20px">Download</p>
   <form name="upload" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data"  style="margin-left:20px">
      <!-- On limite le fichier à 100Ko -->
      <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-     Head: <input type="file" name="motivation_letter_head">
+     Head: <br> <textarea rows="10" style="width:97%" name="comment" form="cover_letter_head" placeholder="Jean Dupond 190 Avenue de Broadway 33000 Bordeaux +33 606 606 606 dupond.jean@perso.com"></textarea>
      <p>Ne pas mettre d'entreprise dans votre Head.</p>
-     Content+Footer: <input type="file" name="motivation_letter_rest">
-     <input type="submit" name="envoyer" value="Envoyer le fichier">
+     Content+Footer: <br> <textarea rows="10" style="width:97%" name="comment" form="cover_letter_head" placeholder="Content of the cover letter..."></textarea><br>
+     <input type="submit" name="envoyer" value="Save">
 </form>
 
   <?php

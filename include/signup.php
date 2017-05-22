@@ -57,7 +57,6 @@
       <p class="connect" style="color:white;margin-top:8px;margin-bottom:-5px;"><?php
       include('./userConnect.php');
         ?><p class="connect" style="margin-top:25px;margin-bottom:-25px"><a href="./login.php">Se connecter</a></p><?php
-      }
       ?>
     </p>
       </li>

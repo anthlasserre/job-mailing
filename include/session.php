@@ -1,5 +1,5 @@
 <?php
-   include('../config/connect.inc.php');
+   include __DIR__.'/../config/connect.inc.php';
    session_start();
    $user_check = $_SESSION['login_user'];
    $ses_sql = mysqli_query($db,"SELECT user_name FROM users WHERE user_name = '$user_check' ");
@@ -8,3 +8,4 @@
    if(!isset($_SESSION['login_user'])){
       header("location: ./include/login.php");
    }
+?>

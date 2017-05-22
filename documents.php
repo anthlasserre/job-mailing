@@ -36,7 +36,7 @@ include('./include/session.php');
       <li>
       <p class="connect" style="color:white;margin-top:8px;margin-bottom:-5px;"><?php
       include('./include/userConnect.php');
-      if ($_SESSION['login_user'] != "www-data") {
+      if ($_SESSION['login_user'] == "alasserre" ) {
         echo 'Yo ' . $_SESSION['login_user'] . ' !' .'  <i class="fa fa-user-circle-o"></i>'  . '<br>';
         ?><p class="connect"><a href="./include/logout.php">Se déconnecter</a></p>
       <?php }
@@ -54,7 +54,7 @@ include('./include/session.php');
   <!-- CONTENU -->
 
   <!-- CURRICULUM VITAE -->
-<div class="panel panel-default" style="position:absolute;width:48%;">
+<div class="panel panel-default" style="float:left;width:48%">
   <div class="panel-heading">Curriculum Vitae</div>
   <div class="panel-body">
 
@@ -89,11 +89,11 @@ include('./include/session.php');
     <a href="./upload/cv.pdf" title="le fichier">Téléchargez le fichier...</a>
     </object>
   </div>
-  </div>
+
 
 
   <!-- MOTIVATION LETTER -->
-<div class="panel panel-default" style="position:absolute;width:48%;right:20px">
+<div class="panel panel-default" style="float:right;width:48%">
   <div class="panel-heading">Cover Letter</div>
   <div class="panel-body">
 
@@ -106,17 +106,9 @@ include('./include/session.php');
      Content+Footer: <br> <textarea rows="10" style="width:97%" name="comment" form="cover_letter_head" placeholder="Content of the cover letter..."></textarea><br>
      <input type="submit" name="envoyer" value="Save">
 </form>
-
-  <?php
-
-
-  ?>
     <br>
 
   </div>
-  </div>
-
-
 
 </body>
 </html>

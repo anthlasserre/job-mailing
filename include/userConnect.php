@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
    // username and password sent from form
    $myusername = $_POST['user_name'];
    $mypassword = $_POST['user_pass'];
-   $link = mysql_connect("localhost", "root", "root");
+   $link = mysqli_connect("localhost", "root", "root");
    mysql_select_db("jobmailing", $link);
    $result = mysql_query("SELECT user_id FROM users WHERE user_name = '$myusername' and user_pass = '$mypassword'", $link);
    $num_rows = mysql_num_rows($result);

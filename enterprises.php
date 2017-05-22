@@ -36,7 +36,7 @@ include('./include/session.php');
       <li>
       <p class="connect" style="color:white;margin-top:8px;margin-bottom:-5px;"><?php
       include('./include/userConnect.php');
-      if ($_SESSION['login_user'] != "www-data") {
+      if ($_SESSION['login_user'] == "alasserre" ) {
         echo 'Yo ' . $_SESSION['login_user'] . ' !' .'  <i class="fa fa-user-circle-o"></i>'  . '<br>';
         ?><p class="connect"><a href="./include/logout.php">Se déconnecter</a></p>
       <?php }
@@ -83,7 +83,7 @@ include('./include/session.php');
       <tr>
       <td width="10px"><?php echo $donnees['enterprise_id']; ?></td>
       <td width="300px"><?php echo $donnees['enterprise_name']; ?></td>
-      <td width="300px"><?php echo $donnees['enterprise_email']; ?></td>
+      <td width="300px"></td>
       <td><?php echo $donnees['enterprise_contact']; ?></td>
       <td><?php echo $donnees['enterprise_address']; ?></td>
     </tr>
